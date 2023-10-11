@@ -1,0 +1,76 @@
+﻿@page
+@model BirdFarmShop.Pages.TestUser.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>@ViewData["RoleName"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblUser.RoleId" class="control-label">Role Name</label>
+                <select asp-for="TblUser.RoleId" class="form-control" asp-items= "ViewBag.RoleName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.WardId" class="control-label">Ward</label>
+                <select asp-for="TblUser.WardId" class ="form-control" asp-items="ViewBag.WardName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.DistrictId" class="control-label">District</label>
+                <select asp-for="TblUser.DistrictId" class ="form-control" asp-items="ViewBag.DistrictName"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.UserName" class="control-label">User Name</label>
+                <input asp-for="TblUser.UserName" class="form-control" />
+                <span asp-validation-for="TblUser.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.Pass" class="control-label">Password</label>
+                <input asp-for="TblUser.Pass" class="form-control" />
+                <span asp-validation-for="TblUser.Pass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.FullName" class="control-label">Full Name</label>
+                <input asp-for="TblUser.FullName" class="form-control" />
+                <span asp-validation-for="TblUser.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.Phone" class="control-label">Phone</label>
+                <input asp-for="TblUser.Phone" class="form-control" />
+                <span asp-validation-for="TblUser.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.UserAddress" class="control-label">Address</label>
+                <input asp-for="TblUser.UserAddress" class="form-control" />
+                <span asp-validation-for="TblUser.UserAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.Email" class="control-label">Email</label>
+                <input asp-for="TblUser.Email" class="form-control" />
+                <span asp-validation-for="TblUser.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblUser.UserStatus" class="control-label">Status</label>
+                <input asp-for="TblUser.UserStatus" class="form-control" />
+                <span asp-validation-for="TblUser.UserStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
